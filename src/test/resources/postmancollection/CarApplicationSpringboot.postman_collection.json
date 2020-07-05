@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "d919cd00-0800-4da5-894f-82965668ffe5",
+		"name": "CarApplicationSpringboot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"abc@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				},
+				"description": "This request will return a JWT token which will need to be added in every subsequent requests in the header."
+			},
+			"response": []
+		},
+		{
+			"name": "get all cars",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiZXhwIjoxNTkzOTY0MTcwLCJpYXQiOjE1OTM5NDYxNzB9.vAMwkAPY96XlpQ_F90zW0Fp0Ny-5kSQALE8ynQDULWwDmC5-Wv-qN2f3IvZv_3beTcs68tPo7ACDxJffswdm9w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/cars/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						""
+					]
+				},
+				"description": "This method gets all cars"
+			},
+			"response": [
+				{
+					"name": "get all cars",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiZXhwIjoxNTkzOTY0MTcwLCJpYXQiOjE1OTM5NDYxNzB9.vAMwkAPY96XlpQ_F90zW0Fp0Ny-5kSQALE8ynQDULWwDmC5-Wv-qN2f3IvZv_3beTcs68tPo7ACDxJffswdm9w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/cars/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 05 Jul 2020 10:57:31 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Duster\",\n        \"manufactureName\": \"Renault\",\n        \"model\": \"model1\",\n        \"manufacturingYear\": \"2015\",\n        \"color\": \"red\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Suzuki\",\n        \"manufactureName\": \"Maruti\",\n        \"model\": \"model2\",\n        \"manufacturingYear\": \"2015\",\n        \"color\": \"red\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "search car by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiZXhwIjoxNTkzOTY0MTcwLCJpYXQiOjE1OTM5NDYxNzB9.vAMwkAPY96XlpQ_F90zW0Fp0Ny-5kSQALE8ynQDULWwDmC5-Wv-qN2f3IvZv_3beTcs68tPo7ACDxJffswdm9w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/cars/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						"1"
+					]
+				},
+				"description": "This method will retrieve a car by id"
+			},
+			"response": []
+		},
+		{
+			"name": "search car by params",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiZXhwIjoxNTkzOTY0MTcwLCJpYXQiOjE1OTM5NDYxNzB9.vAMwkAPY96XlpQ_F90zW0Fp0Ny-5kSQALE8ynQDULWwDmC5-Wv-qN2f3IvZv_3beTcs68tPo7ACDxJffswdm9w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/cars/search?manufactureName=Maruti",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						"search"
+					],
+					"query": [
+						{
+							"key": "manufactureName",
+							"value": "Maruti"
+						}
+					]
+				},
+				"description": "This method will return list of cars"
+			},
+			"response": []
+		},
+		{
+			"name": "update car",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiZXhwIjoxNTkzOTY0MTcwLCJpYXQiOjE1OTM5NDYxNzB9.vAMwkAPY96XlpQ_F90zW0Fp0Ny-5kSQALE8ynQDULWwDmC5-Wv-qN2f3IvZv_3beTcs68tPo7ACDxJffswdm9w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n       \"id\": 2,\r\n        \"name\": \"Suzukii\",\r\n        \"manufactureName\": \"Maruti\",\r\n        \"model\": \"model2\",\r\n        \"manufacturingYear\": \"2015\",\r\n        \"color\": \"red\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cars/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						"2"
+					]
+				},
+				"description": "This request will update the car obj"
+			},
+			"response": []
+		},
+		{
+			"name": "delete car",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiZXhwIjoxNTkzOTY0MTcwLCJpYXQiOjE1OTM5NDYxNzB9.vAMwkAPY96XlpQ_F90zW0Fp0Ny-5kSQALE8ynQDULWwDmC5-Wv-qN2f3IvZv_3beTcs68tPo7ACDxJffswdm9w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/cars/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						"1"
+					]
+				},
+				"description": "This request will delete a car"
+			},
+			"response": []
+		},
+		{
+			"name": "create a new car",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiZXhwIjoxNTkzOTY0MTcwLCJpYXQiOjE1OTM5NDYxNzB9.vAMwkAPY96XlpQ_F90zW0Fp0Ny-5kSQALE8ynQDULWwDmC5-Wv-qN2f3IvZv_3beTcs68tPo7ACDxJffswdm9w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\":null,\r\n        \"name\": \"Fiat\",\r\n        \"manufactureName\": \"Ford\",\r\n        \"model\": \"model2\",\r\n        \"manufacturingYear\": \"2016\",\r\n        \"color\": \"red\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cars/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						""
+					]
+				},
+				"description": "This request will create a new Car"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a93458b7-9193-40e3-9c30-bac5a33fc2fd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f4107271-85c7-483f-9425-e11f255f404b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

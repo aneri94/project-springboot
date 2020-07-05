@@ -1,0 +1,6 @@
+- I have used Maven instead of Gradle
+- Currently search by params will handle only one request parameter
+- In the attached postman collection, replace the Bearer token with an active one using "/authenticate" to test the APIs
+- Enhancements that can be done in this project :
+   ->advance search for all possible combinations can be developed by using CriteriaBuiler
+   ->server side pagination and sorting can be implemented
