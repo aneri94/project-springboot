@@ -2,5 +2,5 @@
 - Currently search by params will handle only one request parameter
 - In the attached postman collection, replace the Bearer token with an active one using "/authenticate" to test the APIs
 - Enhancements that can be done in this project :
-   ->advance search for all possible combinations can be developed by using CriteriaBuiler
+   ->advance search for all possible combinations can be developed by using CriteriaBuilder
    ->server side pagination and sorting can be implemented
